@@ -1,5 +1,17 @@
 import logo from './logo.svg';
-import './App.css';
+const color = process.env.REACT_APP_COLOR;
+const text = process.env.REACT_APP_TEXT;
+const foo = process.env.REACT_APP_FOO;
+if (color === "red"){
+  require('./App-red.css');
+} else if (color === "green"){
+  require('./App-green.css')
+} else if (color === "blue"){
+  require('./App-blue.css')
+} else {
+  require('./App.css')
+}
+
 
 function App() {
   return (
@@ -8,6 +20,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+          {text}
+          {foo}
         </p>
         <a
           className="App-link"

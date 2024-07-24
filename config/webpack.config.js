@@ -179,6 +179,7 @@ module.exports = function (webpackEnv) {
           loader: require.resolve(preProcessor),
           options: {
             sourceMap: true,
+            additionalData: "$color: " + process.env.REACT_APP_COLOR + ";",
           },
         }
       );
